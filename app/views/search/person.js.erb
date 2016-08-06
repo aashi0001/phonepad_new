@@ -1,0 +1,16 @@
+$(document).ready(function(){
+	if ($('#txtarea').html("")) {
+   $('.display').css({'height' : '300px'});
+   $('.num').css({'height' : '20%'});
+   $('.list').css({'height' : '80%'});
+} else {
+   alert('The container is empty.');
+}
+});
+
+$("#txtarea").fadeOut(500,function(){
+	$(this).html("");
+	<% @contacts.each do |c| %>
+		$("#txtarea").append('<h3><%= c.name %></h3><h4><br><%= c.phone %></h4>').fadeIn(500);
+	<% end %>
+});

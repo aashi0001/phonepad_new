@@ -1,0 +1,106 @@
+<style> 
+.display{
+    height:70px;
+    width:100%;
+
+}
+.num{
+    height:100%;
+    width:100%;
+    text-align: center;
+    font-size: 34px;
+}
+.list{
+    height: 0%;
+    width: 100%;
+    overflow: scroll;
+}
+.phone {
+    padding-top: 5px!important;
+  -webkit-transition: -webkit-transform .6s ease-in-out;
+  transition: transform .6s ease-in-out;
+}
+.phone:hover {
+    background-color:#FE372D;
+  -webkit-transform: rotate(360deg);
+  transform: rotate(140deg);
+
+}
+.special{
+    padding-top: 3px!important;
+}
+</style> 
+
+<div id="wrapper">    
+    <div class="display">
+        <div id="destination"class="num"></div>
+        <div class="list"id="txtarea"></div>
+    </div>
+    <%= form_for :search, :url=>{:controller=>"search",:action=>"person"}, :remote=>true do |f|%>
+    <%= f.hidden_field("keyword",:value=>"1") %>
+    <button type="submit" class="key" rel="1">1</button type="submit">
+    <% end %>
+    <%= form_for :search, :url=>{:controller=>"search",:action=>"person"}, :remote=>true do |f|%>
+    <%= f.hidden_field("keyword",:value=>"2,a,b,c") %>
+    <button type="submit" class="key" rel="2">2<span>abc</span></button>
+    <% end %>
+    <%= form_for :search, :url=>{:controller=>"search",:action=>"person"}, :remote=>true do |f|%>    
+    <%= f.hidden_field("keyword",:value=>"3,d,e,f") %>
+    <button type="submit" class="key" rel="3">3<span>def</span></button>
+    <% end %>
+    
+    <div class="clear"></div>
+    
+    <%= form_for :search, :url=>{:controller=>"search",:action=>"person"}, :remote=>true do |f|%>    
+    <%= f.hidden_field("keyword",:value=>"4,g,h,i") %>
+    <button type="submit" class="key" rel="4">4<span>ghi</span></button>
+    <% end %>
+    <%= form_for :search, :url=>{:controller=>"search",:action=>"person"}, :remote=>true do |f|%>    
+    <%= f.hidden_field("keyword",:value=>"5,j,k,i") %>
+    <button type="submit" class="key" rel="5">5<span>jkl</span></button>
+    <% end %>
+    <%= form_for :search, :url=>{:controller=>"search",:action=>"person"}, :remote=>true do |f|%>    
+    <%= f.hidden_field("keyword",:value=>"6,m,n,o") %>
+    <button type="submit" class="key" rel="6">6<span>mno</span></button>
+    <% end %>
+    
+    <div class="clear"></div>
+    
+    <%= form_for :search, :url=>{:controller=>"search",:action=>"person"}, :remote=>true do |f|%>    
+    <%= f.hidden_field("keyword",:value=>"7,p,q,r,s") %>
+    <button type="submit" class="key" rel="7">7<span>pqrs</span></button>
+    <% end %>
+    <%= form_for :search, :url=>{:controller=>"search",:action=>"person"}, :remote=>true do |f|%>    
+    <%= f.hidden_field("keyword",:value=>"8,t,u,v") %>
+    <button type="submit" class="key" rel="8">8<span>tuv</span></button>
+    <% end %>
+    <%= form_for :search, :url=>{:controller=>"search",:action=>"person"}, :remote=>true do |f|%>    
+    <%= f.hidden_field("keyword",:value=>"9,w,x,y,z") %>
+    <button type="submit" class="key" rel="9">9<span>wxyz</span></button>
+    <% end %>
+    
+    <div class="clear"></div>
+
+    <%= form_for :search, :url=>{:controller=>"search",:action=>"person"}, :remote=>true do |f|%>    
+    <%= f.hidden_field("keyword",:value=>"*") %>
+    <button type="submit" class="key special" rel="*">*</button>
+    <% end %>
+    <%= form_for :search, :url=>{:controller=>"search",:action=>"person"}, :remote=>true do |f|%>    
+    <%= f.hidden_field("keyword",:value=>"0,+") %>
+    <button type="submit" class="key" rel="0">0<span>+</span></button>
+    <% end %>
+    <%= form_for :search, :url=>{:controller=>"search",:action=>"person"}, :remote=>true do |f|%>    
+    <%= f.hidden_field("keyword",:value=>"#") %>
+    <button type="submit" class="key special" rel="#">#</button>
+    <% end %>
+   
+    <div class="clear"></div>
+    <%= link_to( "contacts", :action => "index")do %>
+        <div class="key nb" rel="">Add</div>
+    <% end  %>
+    
+    <div class="key phone" rel=""><i class="fa fa-phone"></i></div>
+    <div class="key nb clr" rel=""><i class="fa fa-reply"></i></div>
+    <div class="clear"></div>
+    
+</div>
